@@ -1,0 +1,7 @@
+You often come across scenarios where you have to calculate a running total from a table. This is to know what each value is, against a running total.
+A running total refers to the sum of values in all cells of a column that precedes the next cell in that particular column.
+
+SELECT id,month
+ , Amount
+ , SUM(Amount) OVER (ORDER BY id) as total_sum
+FROM bill

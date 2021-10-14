@@ -1,0 +1,14 @@
+The Common Table Expressions or CTE’s for short are used to simplify the readability of complex joins and subqueries.
+It is basically a temporary named result set that you can reference within a SELECT, INSERT, UPDATE, or DELETE statement.
+
+
+WITH idtempp as (
+  SELECT id as id
+  FROM id 
+  WHERE country = "US"
+  AND status = "Y"
+)
+
+SELECT *
+FROM bill
+WHERE id in (SELECT id from idtempp)

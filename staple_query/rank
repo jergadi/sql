@@ -1,0 +1,7 @@
+Data engineers and analysts would agree that it is very common to rank values based on some parameter like salaries or expense, etc. And having the knowledge of ranking data at your fingertips can save you a lot of time finding out the exact query.
+
+SELECT 
+  id,
+  Amount,
+  RANK() OVER (ORDER BY Amount desc)
+FROM bill
